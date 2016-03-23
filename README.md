@@ -4,7 +4,7 @@
 Loading JavaScript into our application can be done many different ways in Rails. We can use HTML script tags for JS files located on another server. We can place third party JS files in our vendor folder. Finally we can even use gems to load the JS libraries we need. 
 
 ## External JavaScript
-Not all of our JavaScript files will be loaded from our application directories. Sometimes we may want to load JS from a CDN. This can allow us to save on bandwidth and if we don't have a CDN setup for our application, it will help with file download speeds for users throughout the world. To load JS like this, we create HTML script tags in our application layout file.
+Not all of our JavaScript files will be loaded from our application directories. Sometimes we may want to load JS from a CDN. This can allow us to save on bandwidth and if we have a CDN setup for our application, it will help with file download speeds for users throughout the world. To load JS like this, we create HTML script tags in our application layout file.
 
 ```html
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" />
@@ -21,3 +21,5 @@ Manually adding JS to our vendor directory can be cumbersome and hard to maintai
 For example, let's install the jQuery gem in our Gemfile. Once we `bundle install`, we are able to add `//= require jquery` to our manifest file. Now jQuery will be loaded by Rails. Plus, we can use bundler to update jQuery when new versions are released. Handling updating is particular helpful for bigger JS frameworks that might have many JS files and dependencies.  This makes our life simpler, but it also may cause problems.  It's possible we don't want to update to the newest version of every JS file.  The API of the library could have changed causing our code to break.  It also is going to require the user to re-download the JS libary when there may be no need to.  We also (as in the previous section) would be concatenating our JS libraries together which might lose the benefits of caching those libraries.
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/external-javascript-libraries-in-rails' title='External Javascript Libraries In Rails'>External Javascript Libraries In Rails</a> on Learn.co and start learning to code for free.</p>
+
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/external-javascript-libraries-in-rails'>External Javascript Libraries</a> on Learn.co and start learning to code for free.</p>
